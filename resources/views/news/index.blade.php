@@ -153,68 +153,54 @@
     @foreach($fenlei as $v)
     <div class="main2">
         <div class="t_2"> <span>
-                <a href="/a/news/">更多>></a>
+                <a href="/fenlei/{{$v['id']}}">更多>></a>
             </span>
-            <h3><a href="/a/news/">{{$v['fenlei_name']}}</a></h3>
+            <h3><a href="/fenlei/{{$v['id']}}">{{$v['fenlei_name']}}</a></h3>
         </div>
         <div class="g_box3 fl">
+            <?php 
+                $article2 = \DB::Table('article4s')->orderBy('id','desc')->where('fenlei_id',$v['id'])->limit(2)->get();
+                $article4 = \DB::Table('article4s')->orderBy('id','desc')->where('fenlei_id',$v['id'])->skip(2)->limit(4)->get();
+                $hot_article = \DB::Table('article4s')->orderBy('dianji','desc')->where('fenlei_id',$v['id'])->limit(1)->first();
+                $pic_article= \DB::Table('article4s')->orderBy('id','desc')->where('fenlei_id',$v['id'])->where('news_pic','<>','')->limit(2)->get();
+                $hot2_article= \DB::Table('article4s')->orderBy('dianji','desc')->where('fenlei_id',$v['id'])->limit(8)->get();
+            ?>
             <ul class="b_box2">
-                <li> <a href="/a/news/guonei/13.html">十万客流中铁警一小时帮助旅客找回遗失</a>央广网武汉10月4日消息（记者张毛清 通讯员田昊 周慧）连日来，武汉火车站...</li>
-                <li> <a href="/a/news/guonei/12.html">黑龙江：科研人员依法依规可以兼职兼薪</a>新华社哈尔滨１０月４日电（记者 闫睿）记者从黑龙江省科技厅获悉，这个省...</li>
-
+                @foreach($article2 as $val)
+                <li> <a href="/article/{{$val->id}}">{{$val->title}}</a>央广网武汉10月4日消息（记者张毛清 通讯员田昊 周慧）连日来，武汉火车站...</li>
+                @endforeach
             </ul>
             <ul class="b_box3">
-                <li><a href="/a/news/guonei/11.html">2017牧马人大会暨百路驰岩酷攀爬赛在阿</a></li>
-                <li><a href="/a/news/guonei/10.html">拉斯维加斯：献血救伤员</a></li>
-                <li><a href="/a/news/guonei/9.html">司机挡号牌 家人欲＂贿赂＂交警:给你们</a></li>
-                <li><a href="/a/news/guoji/8.html">21岁少女沉迷手游，疯玩一整天右眼永久</a></li>
-                <li><a href="/a/news/guoji/7.html">忆往昔看今朝 通江红色旅游格外红火</a></li>
-
+                @foreach($article4 as $val)
+                <li><a href="/article/{{$val->id}}">{{$val->title}}</a></li>
+                @endforeach
             </ul>
         </div>
         <div class="g_box4 fl">
-            <h3><a href="/a/news/reping/19.html">走失9年一直寄居救助站 六旬婆婆中秋前</a></h3>
+            <h3><a href="/article/{{$hot_article->id}}">{{$hot_article->title}}</a></h3>
             <p>大洋网讯 今天是中秋佳节，家家户户都盼望着团圆，而一名六旬老人在走失了9年后，昨日在顺德公安和省救助站...</p>
 
             <ul class="b_box8">
-                <li> <a href="/a/news/reping/18.html"><img src="/images/1-1G129135KV46-lp.jpg" alt="9岁娃离家出走投奔同学 民警用炸鸡哄出" /></a>
-                    <h4><a href="/a/news/reping/18.html">9岁娃离家出走投奔同学 民警用炸鸡哄出</a></h4>
+                    @foreach($pic_article as $val)
+                <li> <a href="/article/{{$val->id}}"><img src="{{$val->news_pic}}" alt="{{$val->title}}" /></a>
+                    <h4><a href="/article/{{$val->id}}">{{$val->title}}</a></h4>
                     <p>10月2日，武汉开发区（汉南区）一个9岁女孩离家出走，抱着一袋衣服欲投奔同学，被民警街头巡逻发现。在一堆零食的攻心下，民警套...</p>
                 </li>
-                <li> <a href="/a/news/shiju/16.html"><img src="/images/1-1G12913515Ha-lp.jpg" alt="武汉警察丈夫中秋执勤 警嫂到派出所做" /></a>
-                    <h4><a href="/a/news/shiju/16.html">武汉警察丈夫中秋执勤 警嫂到派出所做</a></h4>
-                    <p>湖北日报网讯（全媒体记者黄磊 通讯员杨槐柳、应后威）4日中午，武汉市公安局汉阳分局月湖派出所一股新鲜的月饼香味吸引了执勤归...</p>
-                </li>
-
+                    @endforeach
             </ul>
         </div>
         <div class="g_box3 fl">
             <div class="t_3">热门文章</div>
             <ul class="b_box4">
-                <li><a href="/a/news/guonei/12.html">黑龙江：科研人员依法依规可以兼职兼薪</a></li>
-                <li><a href="/a/news/shiju/16.html">武汉警察丈夫中秋执勤 警嫂到派出所做</a></li>
-                <li><a href="/a/news/shiju/14.html">平乡县：敬老院老人欢乐过中秋</a></li>
-                <li><a href="/a/news/guonei/11.html">2017牧马人大会暨百路驰岩酷攀爬赛在阿</a></li>
-                <li><a href="/a/news/shiju/15.html">江苏警方摧毁一制枪涉毒团伙</a></li>
-                <li><a href="/a/news/guoji/8.html">21岁少女沉迷手游，疯玩一整天右眼永久</a></li>
-                <li><a href="/a/news/reping/19.html">走失9年一直寄居救助站 六旬婆婆中秋前</a></li>
-                <li><a href="/a/news/guoji/2.html">旧金山市长拒与大阪市长谈慰安妇像：无</a></li>
-
+                @foreach($hot2_article as $val)
+                <li><a href="/article/{{$val->id}}">{{$val->title}}</a></li>
+                @endforeach
             </ul>
         </div>
         <div class="clear"></div>
     </div>
     @endforeach
-    <div class="link">
-        <h3>友情链接</h3>
-        <p> <a href='http://www.adminbuy.cn/' target='_blank'>网站模板下载</a> <a href='http://www.28sucai.com' target='_blank'>素材库</a>
-            <a href='http://fang.adminbuy.cn/' target='_blank'>仿站</a> <a href='http://sc.adminbuy.cn/' target='_blank'>图标下载</a>
-            <a href='http://www.adminbuy.cn/' target='_blank'>dedecms模板</a> <a href='http://www.adminbuy.cn/' target='_blank'>营销型网站模板</a>
-            <a href='http://www.adminbuy.cn/' target='_blank'>响应式网站模板</a> <a href='http://www.adminbuy.cn/' target='_blank'>手机网站模板</a>
-            <a href='http://www.adminbuy.cn/' target='_blank'>discuz模板</a> <a href='http://www.adminbuy.cn/' target='_blank'>网站源码</a>
-            <a href='http://www.adminbuy.cn/' target='_blank'>织梦模板</a> <a href='http://www.adminbuy.cn' target='_blank'>模板王</a>
-        </p>
-    </div>
+    @include('gong.footer')
 
     <div class="foot"> Copyright &copy; Www.AdminBuy.Cn AB模板网 版权所有<br />
         本站所有资讯来源于网络 如有侵权请联系QQ：9490489 <b>技术支持</b>：<a href="http://www.adminbuy.cn" target="_blank">织梦模板</a></div>

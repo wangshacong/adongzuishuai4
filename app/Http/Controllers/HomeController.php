@@ -31,7 +31,7 @@ class HomeController extends Controller
     {
         $fenlei=Fenlei4::all();
         $dangqian_fenlei = Fenlei4::where('id',$id)->first();
-        $article = Article4::orderBy('id','desc')->where('fenlei_id','=',$id)->paginate(10);
+        $article = Article4::orderBy('id','desc')->where('fenlei_id','=',$id)->where('news_pic','<>','')->paginate(10);
         $lunbo = Article4::orderBy('id','desc')->where('fenlei_id',$id)->where('news_pic','<>','')->limit(5)->get();
         return view('news.list',compact('dangqian_fenlei','article','fenlei','id','lunbo'));
     }
@@ -40,7 +40,7 @@ class HomeController extends Controller
     public function content($id)
     {
         $fenlei = Fenlei4::all();
-        $content = Article4::where('id','=',$id)->get();
+        $content = Article4::where('id','=',$id)->first();
         return view('news.article', compact('content','fenlei','id'));
     }
 
