@@ -733,7 +733,8 @@ body {
 	padding: 0 5px 5px 5px;
 
 	color: #787878;
-
+	height: 45px;
+    overflow: hidden;
 }
 
 
