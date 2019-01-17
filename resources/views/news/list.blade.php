@@ -41,7 +41,7 @@
                     @foreach($article as $v)
                     <li> <a href="/article/{{$v['id']}}"><img class="" src="{{$v['news_pic']}}" alt="{{$v['title']}}"></a>
                         <h3><a href="/article/{{$v['id']}}">{{$v['title']}}</a></h3>
-                        <p>五年前，上海棋院实验小学男生李子豪是个皮得拆天拆地的调皮鬼；五年后的李子豪就像变了一个人，做事专注高效。皮大王之所以发生翻天覆地变化，得益于一方小小的棋盘。学习中国象棋的五年，让这个坐不定的孩子找到了兴趣，也收获了全国、全市比赛的一枚枚冠...</p>
+                        <p><?php echo preg_replace('/<.*?>/','',$v->content); ?></p>
                         <span>2017-11-29</span>
                     </li>
                     @endforeach

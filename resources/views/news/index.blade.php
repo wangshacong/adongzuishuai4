@@ -122,15 +122,13 @@
             <h1><a href="/article/{{$v->id}}">{{$v->title}}</a></h1>
             <p><?php echo preg_replace('/<.*?>/','',$v->content); ?></p>
             @endforeach
+            <?php 
+                $article = \DB::Table('article4s')->orderBy('dianji','desc')->skip(2)->limit(8)->get();
+            ?>
             <ul>
-                <li><a href="/a/chengshi/nb/84.html">申鑫官宣：原主帅胡安卸任 继任者人选下周</a></li>
-                <li><a href="/a/chengshi/hz/83.html">DOTA2完美大师赛中国战队夺冠 全新赛事体系</a></li>
-                <li><a href="/a/chengshi/hz/82.html">J联赛出现神操作 可爱小猴子任开球嘉宾引发</a></li>
-                <li><a href="/a/shishang/xingzuo/81.html">2272天后，鲁尼再演帽子戏法！埃弗顿4比0大</a></li>
-                <li><a href="/a/shishang/dianying/80.html">昔日中超金靴转投中甲？埃尔克森是走是留引</a></li>
-                <li><a href="/a/shishang/dianying/79.html">创纪录联赛12连胜，曼城有“绝杀先生”斯特</a></li>
-                <li><a href="/a/shishang/dianying/78.html">秋季到 巧喝茶解秋燥</a></li>
-                <li><a href="/a/shishang/mingxing/77.html">女子确诊患癌 准备未来17年礼物陪伴女儿</a></li>
+                @foreach($article as $v)
+                <li><a href="/article/{{$v->id}}">{{$v->title}}</a></li>
+                @endforeach
 
                 <div class="clear"></div>
             </ul>
@@ -167,7 +165,7 @@
             ?>
             <ul class="b_box2">
                 @foreach($article2 as $val)
-                <li> <a href="/article/{{$val->id}}">{{$val->title}}</a>央广网武汉10月4日消息（记者张毛清 通讯员田昊 周慧）连日来，武汉火车站...</li>
+                <li> <a href="/article/{{$val->id}}">{{$val->title}}</a><?php echo preg_replace('/<.*?>/','',$val->content); ?></li>
                 @endforeach
             </ul>
             <ul class="b_box3">
@@ -178,13 +176,13 @@
         </div>
         <div class="g_box4 fl">
             <h3><a href="/article/{{$hot_article->id}}">{{$hot_article->title}}</a></h3>
-            <p>大洋网讯 今天是中秋佳节，家家户户都盼望着团圆，而一名六旬老人在走失了9年后，昨日在顺德公安和省救助站...</p>
+            <p><?php echo preg_replace('/<.*?>/','',$hot_article->content); ?></p>
 
             <ul class="b_box8">
                     @foreach($pic_article as $val)
                 <li> <a href="/article/{{$val->id}}"><img src="{{$val->news_pic}}" alt="{{$val->title}}" /></a>
                     <h4><a href="/article/{{$val->id}}">{{$val->title}}</a></h4>
-                    <p>10月2日，武汉开发区（汉南区）一个9岁女孩离家出走，抱着一袋衣服欲投奔同学，被民警街头巡逻发现。在一堆零食的攻心下，民警套...</p>
+                    <p><?php echo preg_replace('/<.*?>/','',$val->content); ?></p>
                 </li>
                     @endforeach
             </ul>
