@@ -30,7 +30,7 @@
 
 <body>
 	@include('gong.head')
-	<div class="weizhi"> 您的当前位置：<a href='http://127.0.0.4/'>主页</a> > <a href='/a/chengshi/'>城市</a> > <a href='/a/chengshi/hz/'>杭州</a>
+	<div class="weizhi"> 您的当前位置：<a href='http://127.0.0.4/'>天津实创</a> > <a href='/a/chengshi/'>城市</a> > <a href='/a/chengshi/hz/'>杭州</a>
 		> </div>
 	<div class="main1">
 		<div class="left_1">
@@ -105,9 +105,8 @@
 		<div class="clear"> </div>
 	</div>
 	@include('gong.footer')
-	<div class="foot"> Copyright &copy; Www.AdminBuy.Cn AB模板网 版权所有<br />
-		本站所有资讯来源于网络 如有侵权请联系QQ：9490489 <b>技术支持</b>：<a href="http://www.adminbuy.cn" target="_blank">织梦模板</a></div>
-	<a href="#0" class="cd-top">Top</a>
+	<div class="foot"> Copyright &copy; www.tjscxw.com 版权所有<br /></div>
+		
 </body>
 
 </html>

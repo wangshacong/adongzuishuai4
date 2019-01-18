@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-    <title>（带手机版数据同步）地方门户新闻文章资讯网源码 大型新闻资讯门户织梦网站模板下载 - Www.AdminBuy.Cn</title>
+    <title>天津实创新闻</title>
     <meta name="description" content="（带手机版数据同步）地方门户新闻文章资讯网源码 大型新闻资讯门户织梦网站模板下载 - Www.AdminBuy.Cn" />
     <meta name="keywords" content="地方门户网站模板,新闻资讯网站源码" />
     <link rel="stylesheet" href="/css/style.css" type="text/css" />
@@ -200,9 +200,8 @@
     @endforeach
     @include('gong.footer')
 
-    <div class="foot"> Copyright &copy; Www.AdminBuy.Cn AB模板网 版权所有<br />
-        本站所有资讯来源于网络 如有侵权请联系QQ：9490489 <b>技术支持</b>：<a href="http://www.adminbuy.cn" target="_blank">织梦模板</a></div>
-    <a href="#0" class="cd-top">Top</a>
+    <div class="foot"> Copyright &copy; www.tjscxw.com 版权所有<br /></div>
+
 </body>
 
 </html>
