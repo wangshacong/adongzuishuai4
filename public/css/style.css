@@ -858,6 +858,8 @@ body {
 	padding-bottom: 4px;
 
 	color: #787878;
+	height: 45px;
+	overflow: hidden;
 
 }
 
@@ -1838,6 +1840,8 @@ body {
 	padding: 7px 0 8px 0;
 
 	border-bottom: 1px #e1e1e1 dotted;
+	height: 87px;
+	overflow: hidden;
 
 }
 
@@ -2110,6 +2114,8 @@ body {
 	text-indent: 0em;
 
 	font-size: 13px;
+	height: 45px;
+	overflow: hidden;
 
 }
 
