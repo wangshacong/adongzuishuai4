@@ -30,8 +30,10 @@
 
 <body>
 	@include('gong.head')
-	<div class="weizhi"> 您的当前位置：<a href='http://127.0.0.4/'>天津实创</a> > <a href='/a/chengshi/'>城市</a> > <a href='/a/chengshi/hz/'>杭州</a>
-		> </div>
+	<?php 
+		$fenlei = \DB::Table('fenlei4s')->where('id',$content['fenlei_id'])->first();
+	?>
+	<div class="weizhi"> 您的当前位置：<a href='/'>天津实创</a> > <a href='/fenlei/{{$fenlei->id}}'>{{$fenlei->fenlei_name}}</a> >新闻</div>
 	<div class="main1">
 		<div class="left_1">
 			<div class="g_con">
@@ -70,7 +72,7 @@
 					<p> 相关推荐： </p>
 					<ul class="box">
 						@foreach($tuijian as $v)
-						<a href="/article/{{$v->id}}">{{$v->title}}</a></li>
+					<li><a href="/article/{{$v->id}}">{{$v->title}}</a></li>
 						@endforeach
 					</ul>
 				</div>
