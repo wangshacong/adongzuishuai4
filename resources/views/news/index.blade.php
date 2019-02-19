@@ -179,7 +179,7 @@
             foreach($hot_article as $val)
             <h3><a href="/article/{{$val->id}}">{{$val->title}}</a></h3>
             <p><?php echo preg_replace('/<.*?>/','',$val->content); ?></p>
-
+            endforeach
             <ul class="b_box8">
                     @foreach($pic_article as $val)
                 <li> <a href="/article/{{$val->id}}"><img src="{{$val->news_pic}}" alt="{{$val->title}}" /></a>
