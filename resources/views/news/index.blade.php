@@ -161,7 +161,7 @@
                 $article4 = \DB::Table('article4s')->orderBy('id','desc')->where('fenlei_id',$v['id'])->skip(2)->limit(4)->get();
                 $hot_article = \DB::Table('article4s')->orderBy('dianji','desc')->where('fenlei_id',$v['id'])->limit(1)->first();
                 dump($hot_article);
-                $pic_article= \DB::Table('article4s')->orderBy('id','desc')->where('fenlei_id',$v['id'])->where('news_pic','<>','')->limit(2)->first();
+                $pic_article= \DB::Table('article4s')->orderBy('id','desc')->where('fenlei_id',$v['id'])->where('news_pic','<>','')->limit(2)->get();
                 $hot2_article= \DB::Table('article4s')->orderBy('dianji','desc')->where('fenlei_id',$v['id'])->limit(8)->get();
             ?>
             <ul class="b_box2">
