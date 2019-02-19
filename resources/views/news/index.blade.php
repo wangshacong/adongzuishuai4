@@ -176,7 +176,8 @@
             </ul>
         </div>
         <div class="g_box4 fl">
-            
+            <h3><a href="/article/{{$hot_article['id']}}">{{$hot_article['title']}}</a></h3>
+            <p><?php echo preg_replace('/<.*?>/','',$hot_article['content']); ?></p>
 
             <ul class="b_box8">
                     @foreach($pic_article as $val)
