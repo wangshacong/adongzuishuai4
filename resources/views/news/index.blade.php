@@ -69,7 +69,7 @@
                         ?>
                         @foreach($article as $v)
                         <li>
-                            <div class="pic"><a href="/article{{$v->id}}"><img src="{{$v->news_pic}}" alt="{{$v->title}}"/></a></div>
+                            <div class="pic"><a href="/article/{{$v->id}}"><img src="{{$v->news_pic}}" alt="{{$v->title}}"/></a></div>
                             <div class="tit"><a href="/article/{{$v->id}}">{{$v->title}}</a></div>
                             <div class="bg"></div>
                         </li>
