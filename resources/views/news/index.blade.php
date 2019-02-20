@@ -108,7 +108,7 @@
                 ?>
                 <ul class="b_box3">
                     @foreach ($article as $v)
-                    <li><a href="/article/{{$v->id}}">{{$v->title}}</a></li>
+                    <li><a href="/article/{{$v->id}} target="_blank"">{{$v->title}}</a></li>
                     @endforeach
                 </ul>
             </div>
@@ -119,7 +119,7 @@
             ?>
             <div class="t_1 jrfb">今日焦点 / Focus</div>
             @foreach($article as $v)
-            <h1><a href="/article/{{$v->id}}">{{$v->title}}</a></h1>
+            <h1><a href="/article/{{$v->id}} target="_blank"">{{$v->title}}</a></h1>
             <p><?php echo preg_replace('/<.*?>/','',$v->content); ?></p>
             @endforeach
             <?php 
@@ -127,7 +127,7 @@
             ?>
             <ul>
                 @foreach($article as $v)
-                <li><a href="/article/{{$v->id}}">{{$v->title}}</a></li>
+                <li><a href="/article/{{$v->id}} target="_blank"">{{$v->title}}</a></li>
                 @endforeach
 
                 <div class="clear"></div>
@@ -141,7 +141,7 @@
                 ?>
                 <ul class="ib_box1">
                     @foreach($article as $v)
-                    <li><a href="/article/{{$v->id}}">{{$v->title}}</a></li>
+                    <li><a href="/article/{{$v->id}} target="_blank"">{{$v->title}}</a></li>
                     @endforeach
                 </ul>
             </div>
@@ -151,9 +151,9 @@
     @foreach($fenlei as $v)
     <div class="main2">
         <div class="t_2"> <span>
-                <a href="/fenlei/{{$v['id']}}">更多>></a>
+                <a href="/fenlei/{{$v['id']}} target="_blank"">更多>></a>
             </span>
-            <h3><a href="/fenlei/{{$v['id']}}">{{$v['fenlei_name']}}</a></h3>
+            <h3><a href="/fenlei/{{$v['id']}} target="_blank"">{{$v['fenlei_name']}}</a></h3>
         </div>
         <div class="g_box3 fl">
             <?php 
@@ -165,24 +165,24 @@
             ?>
             <ul class="b_box2">
                 @foreach($article2 as $val)
-                <li> <a href="/article/{{$val->id}}">{{$val->title}}</a><?php echo preg_replace('/<.*?>/','',$val->content); ?></li>
+                <li> <a href="/article/{{$val->id}} target="_blank"">{{$val->title}}</a><?php echo preg_replace('/<.*?>/','',$val->content); ?></li>
                 @endforeach
             </ul>
             <ul class="b_box3">
                 @foreach($article4 as $val)
-                <li><a href="/article/{{$val->id}}">{{$val->title}}</a></li>
+                <li><a href="/article/{{$val->id}} target="_blank"">{{$val->title}}</a></li>
                 @endforeach
             </ul>
         </div>
         <div class="g_box4 fl">
             @foreach($hot_article as $val)
-            <h3><a href="/article/{{$val->id}}">{{$val->title}}</a></h3>
+            <h3><a href="/article/{{$val->id}} target="_blank"">{{$val->title}}</a></h3>
             <p><?php echo preg_replace('/<.*?>/','',$val->content); ?></p>
             @endforeach
             <ul class="b_box8">
                     @foreach($pic_article as $val)
-                <li> <a href="/article/{{$val->id}}"><img src="{{$val->news_pic}}" alt="{{$val->title}}" /></a>
-                    <h4><a href="/article/{{$val->id}}">{{$val->title}}</a></h4>
+                <li> <a href="/article/{{$val->id}} target="_blank""><img src="{{$val->news_pic}}" alt="{{$val->title}}" /></a>
+                    <h4><a href="/article/{{$val->id}} target="_blank"">{{$val->title}}</a></h4>
                     <p><?php echo preg_replace('/<.*?>/','',$val->content); ?></p>
                 </li>
                     @endforeach
